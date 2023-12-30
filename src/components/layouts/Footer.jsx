@@ -22,7 +22,7 @@ function Footer() {
             </svg>
           </a>
         </div> */}
-        <div className="py-2">
+        <div className="py-4">
           <p className="text-gray-500">©Aeshop. 2023. All rights reserved.</p>
         </div>
 

@@ -4,7 +4,7 @@ import heroImage from '../../assets/bb.png'
 function Hero() {
   return (
     <>
-      <div className=" bg-gray-200 mx-auto p-4 sm:px-40 sm:py-12">
+      <div className="h-screen bg-gray-200 mx-auto p-4 sm:px-40 sm:py-12">
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div>
             <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">Discover&nbsp;
@@ -28,7 +28,7 @@ function Hero() {
               </a>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="hidden md:block">
             <img
               className="w-5/6 h-auto rounded-md"
               src={heroImage}

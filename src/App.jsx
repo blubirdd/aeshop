@@ -10,6 +10,7 @@ import Category from './pages/Category';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
+import Register from './pages/Register';
 function App() {
 
   //PrelineUI reinitialization helper
@@ -31,7 +32,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/toys" element={<Category category="Toys" />} />
         <Route path="/historical" element={<Category category="Historical" />} />
         <Route path="/art" element={<Category category="Art" />} />
@@ -41,6 +41,12 @@ function App() {
         <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
+{/* 
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes> */}
+
     </>
   )
 }
