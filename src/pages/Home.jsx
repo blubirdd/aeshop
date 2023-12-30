@@ -1,12 +1,15 @@
 import React from 'react'
-import Navbar from '../components/layouts/Navbar'
-import Header from '../components/layouts/Header'
+
+import Hero from '../components/section/Hero'
+import NewArrivals from '../components/section/NewArrivals'
 
 function Home() {
   return (
     <>
-      <Navbar />
-      <Header />
+      <div className="bg-gray-50 dark:bg-slate-900">
+        <Hero />
+        <NewArrivals />
+      </div>
     </>
   )
 }
