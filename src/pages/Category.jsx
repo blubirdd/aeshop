@@ -7,7 +7,6 @@ function Category({ category }) {
   
   return (
     <>
-      <div>{category}</div>
       <div className="flex flex-wrap justify-center gap-x-4 gap-y-6 mx-auto my-6">
         {products.map((item) => {
           if (category === item.category) {
