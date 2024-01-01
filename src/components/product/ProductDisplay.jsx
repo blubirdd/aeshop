@@ -4,11 +4,16 @@ import starbucks from '/starbucks.jpg'
 import { ShopContext } from '../../context/ShopContext'
 function ProductDisplay({ product }) {
 
-  const { addToCart } = useContext(ShopContext);
+  const { addToCart, getItemStock } = useContext(ShopContext);
   const [quantity, setQuantity] = useState(1);
+  const stock = getItemStock(product.id)
 
   const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
+    if (quantity < stock) {
+      setQuantity((prevQuantity) => prevQuantity + 1);
+    } else {
+      console.error("Maximum stock reached");
+    }
   };
 
   const handleDecrement = () => {
@@ -88,13 +93,15 @@ function ProductDisplay({ product }) {
                         </button>
                         <input
                           onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
-                          className="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 dark:text-white" type="text" value={quantity}
-
+                          className="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 dark:text-white"
+                          type="text"
+                          value={quantity}
                         />
                         <button
                           type="button"
                           className="w-6 h-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                           onClick={handleIncrement}
+                          disabled={quantity >= stock}
                         >
                           <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
                         </button>
@@ -111,6 +118,9 @@ function ProductDisplay({ product }) {
                     </button>
                   </div>
                 </div>
+                {
+                  quantity >= stock && <p className="text-xs text-red-300">Maximum stock reached</p>
+                }
               </div>
             </div>
           </div>

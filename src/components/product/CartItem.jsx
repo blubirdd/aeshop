@@ -3,7 +3,7 @@ import { ShopContext } from '../../context/ShopContext'
 import { Link } from 'react-router-dom';
 
 function CartItem() {
-  const { products, cartItems, addToCart, removeFromCart, deleteFromCart } = useContext(ShopContext);
+  const { products, cartItems, increaseQuantity, removeFromCart, deleteFromCart } = useContext(ShopContext);
   return (
     <>
       <div className="w-full md:w-3/4 bg-white px-10 py-10">
@@ -20,8 +20,8 @@ function CartItem() {
         {/* cart items */}
         {products.map((product) => {
           if (cartItems[product.id] > 0) {
-            return <>
-              <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+            return (
+              <div key={product.id} className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                 <div className="flex w-2/5">
                   <div className="w-20">
                     <img className="h-24 object-cover" src={product.image} alt="" />
@@ -38,27 +38,29 @@ function CartItem() {
                   </div>
                 </div>
                 <div className="flex justify-center w-1/5">
-                  <div class="py-2 px-3 inline-block bg-white border border-gray-200 rounded-lg dark:bg-slate-900 dark:border-gray-700" data-hs-input-number>
-                    <div class="flex items-center gap-x-1.5">
+                  <div className="py-2 px-3 inline-block bg-white border border-gray-200 rounded-lg dark:bg-slate-900 dark:border-gray-700" data-hs-input-number>
+                    <div className="flex items-center gap-x-1.5">
                       <button
                         type="button"
                         onClick={() => { removeFromCart(product.id) }}
-                        class="w-6 h-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                        className="w-6 h-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                         data-hs-input-number-decrement>
-                        <svg class="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /></svg>
+                        <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /></svg>
                       </button>
                       <input
-                        class="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 dark:text-white"
+                        className="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 dark:text-white"
                         type="text"
                         value={cartItems[product.id]}
+                        onChange={(e) => { }}
+                        readOnly
                         data-hs-input-number-input
                       />
                       <button
                         type="button"
-                        onClick={() => { addToCart(product.id, 1) }}
-                        class="w-6 h-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                        onClick={() => { increaseQuantity(product.id)}}
+                        className="w-6 h-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                         data-hs-input-number-increment>
-                        <svg class="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
+                        <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
                       </button>
                     </div>
                   </div>
@@ -67,8 +69,9 @@ function CartItem() {
                 <span className="text-center w-1/5 font-semibold text-sm">₱{product.new_price.toLocaleString()}</span>
                 <span className="text-center w-1/5 font-semibold text-md">₱{(product.new_price * cartItems[product.id]).toLocaleString()}</span>
               </div>
-            </>
+            );
           }
+          return null;
         })}
         {/* <h1>No items in cart</h1> */}
         <Link to="/" className="flex font-semibold text-indigo-600 text-sm mt-10">

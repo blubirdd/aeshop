@@ -14,9 +14,26 @@ const getDefaultCart = ()=>{
 function ShopContextProvider({ children }) {
 
   const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [notifications, setNotifications] = useState([]);
+
+  const setNotification = (message) => {
+    _setNotification(message);
+
+    setTimeout(() => {
+      _setNotification("");
+    }, 2000);
+  };
+
 
   const addToCart = (itemID, quantity) =>{
     setCartItems((prev) => ({...prev,[itemID]:prev[itemID] + quantity}));
+    const product = products.find((product) => product.id === itemID);
+
+    setNotifications((prev) => [...prev, `${quantity} ${product.name} added to cart successfully`]);
+  }
+
+  const increaseQuantity = (itemID) =>{
+    setCartItems((prev) => ({...prev,[itemID]:prev[itemID] + 1}));
   }
 
   const removeFromCart = (itemID) =>{
@@ -25,6 +42,8 @@ function ShopContextProvider({ children }) {
 
   const deleteFromCart = (itemID) => {
     setCartItems((prev) => ({ ...prev, [itemID]: 0 }));
+    setNotification("Item removed from cart successfully");
+    console.log("Item removed from cart successfully");
   };
 
 
@@ -49,14 +68,23 @@ function ShopContextProvider({ children }) {
     return totalCartItems;
   };
 
+  const getItemStock = (itemID) => {
+    const product = products.find((product) => product.id === itemID);
+    return product ? product.stock : 0;
+  };
+
   const contextValue = {
     products,
     cartItems,
     addToCart,
+    increaseQuantity,
     removeFromCart,
     deleteFromCart, 
     getTotalCartAmount,
     getTotalOfCartProducts,
+    getItemStock,
+    notifications,
+    setNotification,
   };
 
 

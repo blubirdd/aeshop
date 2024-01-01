@@ -1,9 +1,13 @@
-import { useEffect } from 'react';
+import React, { useEffect, useContext  } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Navbar from './components/layouts/Navbar';
 import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
+import Notification from './components/others/Notification';
+import { ShopContext } from './context/ShopContext';
 
 import Home from './pages/Home';
 import Category from './pages/Category';
@@ -25,6 +29,13 @@ function App() {
     HSStaticMethods.autoInit();
   }, [location.pathname]);
 
+    //intiaizlie aos
+    useEffect(() => {
+      AOS.init();
+    }, []);
+  
+
+  const { notifications, removeNotification } = useContext(ShopContext);
 
   return (
     <>
@@ -41,6 +52,12 @@ function App() {
         <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
+
+      <div className="notification-container fixed bottom-4 right-4 space-y-2">
+        {notifications.map((message, index) => (
+          <Notification key={index} id={index} message={message} removeNotification={removeNotification} />
+        ))}
+      </div>
 {/* 
       <Routes>
         <Route path="/login" element={<Login />} />
