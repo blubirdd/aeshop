@@ -29,7 +29,7 @@ function ShopContextProvider({ children }) {
     setCartItems((prev) => ({...prev,[itemID]:prev[itemID] + quantity}));
     const product = products.find((product) => product.id === itemID);
 
-    setNotifications((prev) => [...prev, `${quantity} ${product.name} added to cart successfully`]);
+    setNotifications((prev) => [...prev, `${product.name} added to cart successfully`]);
   }
 
   const increaseQuantity = (itemID) =>{

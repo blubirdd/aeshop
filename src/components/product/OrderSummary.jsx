@@ -6,7 +6,7 @@ function OrderSummary() {
   const { getTotalOfCartProducts ,getTotalCartAmount } = useContext(ShopContext);
 
   return (
-    <div className="w-full md:w-1/3 mx-auto bg-gray-100 px-10 py-10">
+    <div className="w-full md:w-1/3 mx-auto bg-white border border-gray-300 px-10 py-10">
       <h1 className="font-semibold text-2xl border-b pb-8">Order Summary</h1>
       <div className="flex justify-between mt-10 mb-5">
         <span className="font-semibold text-sm uppercase">{getTotalOfCartProducts()} Items</span>
