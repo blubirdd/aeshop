@@ -3,7 +3,8 @@ import { ShopContext } from '../../context/ShopContext'
 import { Link } from 'react-router-dom';
 
 function CartItem() {
-  const { products, cartItems, increaseQuantity, removeFromCart, deleteFromCart } = useContext(ShopContext);
+  const { products, cartItems, increaseQuantity, removeFromCart, deleteFromCart, getItemStock } = useContext(ShopContext);
+
   return (
     <>
       <div className="w-full md:w-3/4 bg-white px-10 py-10">
@@ -57,9 +58,11 @@ function CartItem() {
                       />
                       <button
                         type="button"
-                        onClick={() => { increaseQuantity(product.id)}}
+                        onClick={() =>(increaseQuantity(product.id)) }
                         className="w-6 h-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                        disabled={cartItems[product.id] >= product.stock}
                         data-hs-input-number-increment>
+
                         <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
                       </button>
                     </div>

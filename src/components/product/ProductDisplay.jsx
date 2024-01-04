@@ -25,18 +25,19 @@ function ProductDisplay({ product }) {
     addToCart(product.id, quantity);
     setQuantity(1);
   };
+
   return (
     <>
       <div className="overflow-hidden bg-neutral-50 font-poppins dark:bg-gray-800">
-        <div className="max-w-7xl px-4 py-4 mx-auto lg:py-8 md:px-6">
+        <div className="max-w-7xl px-4 py-4 mt-12 mx-auto lg:py-8 md:px-6">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4 md:w-1/2 ">
               <div className="sticky top-0 z-10 overflow-hidden ">
                 <div className="relative mb-2 h-[450px]" >
                   <img
-                    src={starbucks}
+                    src={product.image}
                     alt=""
-                    className="object-cover w-full h-full "
+                    className={`object-contain w-full h-full`}
                   />
                 </div>
                 <div className="flex-wrap hidden md:flex ">
@@ -118,7 +119,7 @@ function ProductDisplay({ product }) {
                       {/* add to cart button  */}
                       <button
                         onClick={() => { handleAddToCart() }}
-                        className="w-80 h-10 p-2 mr-4 rounded-lg bg-sky-700 hover:bg-sky-800 disabled:bg-gray-700 dark:text-gray-200 text-gray-50   dark:bg-blue-600 dark:hover:bg-blue-500"
+                        className="w-80 h-10 p-2 mr-4 rounded-md text-lg font-bold bg-sky-700 hover:bg-sky-800 disabled:bg-gray-700 dark:text-gray-200 text-gray-50   dark:bg-blue-600 dark:hover:bg-blue-500"
                         disabled={quantity > stock}
                       >
                         Add to cart
@@ -133,8 +134,6 @@ function ProductDisplay({ product }) {
                     {product.details}
                   </p>
                 </div>
-
-
               </div>
             </div>
           </div>
