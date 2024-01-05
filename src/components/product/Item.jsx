@@ -10,7 +10,7 @@ function Item({ ...product }) {
       <Link to={`/product/${encodeURIComponent(product.name.toLowerCase().replace(/\s+/g, '-'))}`}>
         <img
           className="h-64 w-full rounded-t-md object-contain object-center transition-transform ease-in-out duration-500 transform-gpu hover:scale-105"
-          src={product.image}
+          src={product.image[0]}
           alt={product.name}
         />
         <div className="p-4 flex-grow flex flex-col">

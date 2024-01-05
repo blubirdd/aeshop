@@ -2,6 +2,9 @@ import React, { useContext, useState, useEffect } from 'react'
 import starbucks from '/starbucks.jpg'
 import { ShopContext } from '../../context/ShopContext'
 
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+
 function ProductDisplay({ product }) {
 
   const { addToCart, getItemStock, cartItems } = useContext(ShopContext);
@@ -34,48 +37,33 @@ function ProductDisplay({ product }) {
     setQuantity(1);
   };
 
+  const [galleryOptions, setGalleryOptions] = useState({
+    showPlayButton: false, 
+    lazyLoad: true,
+    showFullscreenButton: false,
+  });
+
+  const images = product.image.map((img, index) => ({
+    original: img,
+    thumbnail: img,
+
+  }));
+
+
   return (
     <>
       <div className="overflow-hidden bg-neutral-50 font-poppins dark:bg-gray-800">
         <div className="max-w-7xl px-4 py-4 mt-12 mx-auto lg:py-8 md:px-6">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4 md:w-1/2 ">
-              <div className="sticky top-0 z-10 overflow-hidden ">
-                <div className="relative mb-2 h-[450px]" >
-                  <img
-                    src={product.image}
-                    alt=""
-                    className={`object-contain w-full h-full`}
-                  />
-                </div>
-                <div className="flex-wrap hidden md:flex ">
-                  <div className="w-1/2 p-2 sm:w-1/4">
-                    <div className="block border border-blue-100 dark:border-gray-700 dark:hover:border-gray-600 hover:border-blue-300 ">
-                      <img
-                        src={starbucks}
-                        alt=""
-                        className="object-cover w-full lg:h-32"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="w-1/2 p-2 sm:w-1/4">
-                    <div className="block border border-blue-100 dark:border-gray-700 dark:hover:border-gray-600 hover:border-blue-300 ">
-                      <img
-                        src={starbucks}
-                        alt=""
-                        className="object-cover w-full lg:h-32"
-                      />
-                    </div>
-                  </div>
-
-                </div>
+              <div className="sticky top-0 z-10 overflow-hidden bg-white rounded-md p-2">
+              <ImageGallery items={images} {...galleryOptions}  />
               </div>
             </div>
-            <div className="w-full px-4 md:w-1/2 ">
-              <div className="lg:pl-10">
+            <div className="w-full px-4 md:w-1/2">
+              <div className="lg:pl-4">
                 <div className="pb-6 mb-8 border-b border-gray-200 dark:border-gray-700">
-                  <span className="text-lg font-medium text-rose-500 dark:text-rose-200">New</span>
+                  {/* <span className="text-lg font-medium text-rose-500 dark:text-rose-200">New</span> */}
                   <h2 className="max-w-xl mt-2 mb-2 text-xl font-bold dark:text-gray-300 md:text-4xl">
                     {product.name}
                   </h2>
@@ -109,7 +97,7 @@ function ProductDisplay({ product }) {
                             type="button"
                             className="w-6 h-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             onClick={handleIncrement}
-                            disabled={quantity >= initialStock|| cartItems[product.id] >= initialStock}
+                            disabled={quantity >= initialStock || cartItems[product.id] >= initialStock}
                           >
                             <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
                           </button>

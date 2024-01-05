@@ -59,7 +59,7 @@ function CartItem() {
               <div key={product.id} className="flex items-center hover:bg-gray-50 -mx-8 px-6 py-5 border-b-4 border-b-gray-100">
                 <div className="flex w-3/6">
                   <div className="w-20">
-                    <img className="h-24 object-cover" src={product.image} alt="" />
+                    <img className="h-24 object-cover" src={product.image[0]} alt="" />
                   </div>
                   <div className="flex flex-col ml-4 flex-grow">
                     <span className="font-bold text-md">{product.name}</span>

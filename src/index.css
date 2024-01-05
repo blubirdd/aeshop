@@ -43,4 +43,6 @@ img {
   max-width: 100%;
 }
 
-
+.image-gallery-slide img {
+  height: 400px;
+}
