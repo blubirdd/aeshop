@@ -44,7 +44,7 @@ function ShopContextProvider({ children }) {
   //delete item from cart
   const deleteFromCart = (itemID) => {
     setCartItems((prev) => ({ ...prev, [itemID]: 0 }));
-    setNotification("Item removed from cart successfully");
+    // setNotifications("Item removed from cart successfully");
     console.log("Item removed from cart successfully");
   };
 

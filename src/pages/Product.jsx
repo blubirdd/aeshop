@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import { useParams } from 'react-router-dom'
 import ProductDisplay from '../components/product/ProductDisplay';
@@ -11,6 +11,10 @@ function Product() {
   const product = products.find(
     (product) => encodeURIComponent(product.name.toLowerCase().replace(/\s+/g, '-')) === productName
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
