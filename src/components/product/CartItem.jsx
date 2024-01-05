@@ -42,10 +42,10 @@ function CartItem() {
       )}
 
       <div className="w-full md:w-3/4 bg-white px-10 py-10">
-        <div className="flex justify-between border-b pb-1">
-          <h1 className="font-semibold text-2xl">Shopping Cart</h1>
+        <div className="flex justify-between pb-1">
+          <h1 className="font-semibold text-2xl">My Cart</h1>
         </div>
-        <div className="flex mt-10 mb-5">
+        <div className="flex mt-4 mb-5">
           <h3 className="font-semibold text-gray-600 text-xs uppercase w-3/6">Product Details</h3>
           <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/6">Quantity</h3>
           <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/6 ">Price</h3>
@@ -56,7 +56,7 @@ function CartItem() {
         {products.map((product) => {
           if (cartItems[product.id] > 0) {
             return (
-              <div key={product.id} className="flex items-center hover:bg-gray-50 -mx-8 px-6 py-5 border border-b-gray-100">
+              <div key={product.id} className="flex items-center hover:bg-gray-50 -mx-8 px-6 py-5 border-b-4 border-b-gray-100">
                 <div className="flex w-3/6">
                   <div className="w-20">
                     <img className="h-24 object-cover" src={product.image} alt="" />

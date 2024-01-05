@@ -3,18 +3,37 @@ import { products } from '../constants';
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = ()=>{
-  let cart ={};
-  for(let index = 0; index < products.length+1; index++){
+const getDefaultCart = () => {
+  let cart = {};
+  for (let index = 0; index < products.length + 1; index++) {
     cart[index] = 0;
   }
   return cart;
 }
 
+//24 hours
+const DEFAULT_EXPIRATION_TIME = 24 * 60 * 60 * 1000;
+
 function ShopContextProvider({ children }) {
 
-  const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [cartItems, setCartItems] = useState(() => {
+    const storedData = localStorage.getItem('aeshopCart');
+    if (storedData) {
+      const { data, expiration } = JSON.parse(storedData);
+      if (Date.now() < expiration) {
+        return data;
+      }
+    }
+    return getDefaultCart();
+  });
+
+  useEffect(() => {
+    const expiration = Date.now() + DEFAULT_EXPIRATION_TIME;
+    localStorage.setItem('aeshopCart', JSON.stringify({ data: cartItems, expiration }));
+  }, [cartItems]);
+
   const [notifications, setNotifications] = useState([]);
+
 
   const setNotification = (message) => {
     _setNotification(message);
@@ -25,35 +44,34 @@ function ShopContextProvider({ children }) {
   };
 
 
-  const addToCart = (itemID, quantity) =>{
-    setCartItems((prev) => ({...prev,[itemID]:prev[itemID] + quantity}));
+  const addToCart = (itemID, quantity) => {
+    setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] + quantity }));
     const product = products.find((product) => product.id === itemID);
 
     setNotifications((prev) => [...prev, `${product.name} added to cart successfully`]);
   }
 
-  const increaseQuantity = (itemID) =>{
-    setCartItems((prev) => ({...prev,[itemID]:prev[itemID] + 1}));
+  const increaseQuantity = (itemID) => {
+    setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] + 1 }));
   }
 
   //decrease quantity
-  const removeFromCart = (itemID) =>{
-    setCartItems((prev) => ({...prev,[itemID]:prev[itemID] - 1}));
+  const removeFromCart = (itemID) => {
+    setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] - 1 }));
   }
 
   //delete item from cart
   const deleteFromCart = (itemID) => {
     setCartItems((prev) => ({ ...prev, [itemID]: 0 }));
-    // setNotifications("Item removed from cart successfully");
     console.log("Item removed from cart successfully");
   };
 
   //get total amount
-  const getTotalCartAmount = () =>{
+  const getTotalCartAmount = () => {
     let totalAmount = 0;
-    for(const item in cartItems){
-      if(cartItems[item] > 0){
-        let itemInfo = products.find((product)=>product.id===Number(item))
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        let itemInfo = products.find((product) => product.id === Number(item))
         totalAmount += itemInfo.new_price * cartItems[item];
       }
     }
@@ -82,7 +100,7 @@ function ShopContextProvider({ children }) {
     addToCart,
     increaseQuantity,
     removeFromCart,
-    deleteFromCart, 
+    deleteFromCart,
     getTotalCartAmount,
     getTotalOfCartProducts,
     getItemStock,

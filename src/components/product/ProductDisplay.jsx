@@ -136,7 +136,7 @@ function ProductDisplay({ product }) {
                   <p className="max-w-md my-4 text-gray-700 dark:text-gray-400">
                     {product.description}
                   </p>
-                  <p className="max-w-md text-gray-700 dark:text-gray-400">
+                  <p className="max-w-lg text-justify text-gray-700 dark:text-gray-400">
                     {product.details}
                   </p>
                 </div>
