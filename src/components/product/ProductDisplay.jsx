@@ -1,11 +1,18 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import starbucks from '/starbucks.jpg'
 import { ShopContext } from '../../context/ShopContext'
+
 function ProductDisplay({ product }) {
 
-  const { addToCart, getItemStock } = useContext(ShopContext);
+  const { addToCart, getItemStock, cartItems } = useContext(ShopContext);
   const [quantity, setQuantity] = useState(1);
+  const [initialStock, setInitialStock] = useState(getItemStock(product.id));
+
   const stock = getItemStock(product.id)
+
+  useEffect(() => {
+    console.log("INITIAL STOCK IS " + initialStock);
+  }, [initialStock]);
 
   const handleIncrement = () => {
     if (quantity < stock) {
@@ -23,6 +30,7 @@ function ProductDisplay({ product }) {
 
   const handleAddToCart = () => {
     addToCart(product.id, quantity);
+    setInitialStock((prevInitialStock) => prevInitialStock - quantity);
     setQuantity(1);
   };
 
@@ -76,9 +84,9 @@ function ProductDisplay({ product }) {
                     <span>₱{product.new_price.toLocaleString()} &nbsp;</span>
                   </p>
 
-                  {/* <p className="max-w-md mb-1 text-gray-700 dark:text-gray-400">
-                  Stock: {product.stock}
-                </p> */}
+                  <p className="max-w-md mb-1 text-gray-700 dark:text-gray-400">
+                    Stock: {product.stock}
+                  </p>
 
                   <div className="space-y-2 items-center">
                     <div className="mb-4 mr-4 lg:mb-0">
@@ -101,26 +109,24 @@ function ProductDisplay({ product }) {
                             type="button"
                             className="w-6 h-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             onClick={handleIncrement}
-                            disabled={quantity >= stock}
+                            disabled={quantity >= initialStock|| cartItems[product.id] >= initialStock}
                           >
                             <svg className="flex-shrink-0 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
                           </button>
                         </div>
                       </div>
-                      {
-                        quantity > stock
-                          ? <p className="text-sm text-red-400">This item is out of stock</p>
-                          : quantity >= stock
-                            ? <p className="text-sm text-red-400">Maximum stock reached</p>
-                            : null
-                      }
+                      {quantity > stock ? (
+                        <p className="text-sm text-red-400">This item is out of stock</p>
+                      ) : quantity >= stock || cartItems[product.id] >= stock ? (
+                        <p className="text-sm text-red-400">Maximum stock reached</p>
+                      ) : null}
                     </div>
                     <div className="mb-4 mr-4 lg:mb-0">
                       {/* add to cart button  */}
                       <button
                         onClick={() => { handleAddToCart() }}
                         className="w-80 h-10 p-2 mr-4 rounded-md text-lg font-bold bg-sky-700 hover:bg-sky-800 disabled:bg-gray-700 dark:text-gray-200 text-gray-50   dark:bg-blue-600 dark:hover:bg-blue-500"
-                        disabled={quantity > stock}
+                        disabled={quantity > stock || cartItems[product.id] >= stock}
                       >
                         Add to cart
                       </button>

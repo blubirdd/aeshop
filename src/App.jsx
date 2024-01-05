@@ -16,6 +16,7 @@ import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
+import SearchResultsPage from './pages/SearchResultsPage';
 
 import techBanner from '/banners/techBanner2.jpg'
 import toysBanner from '/banners/toysBanner.jpg'
@@ -62,20 +63,23 @@ function App() {
           <Route path="/product" element={<Product />}>
             <Route path=":productName" element={<Product />} />
           </Route>
+          <Route path="/search" element={<SearchResultsPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound/>} />
         </Routes>
         <Footer />
-        <div className="notification-container fixed pointer-events-none bottom-4 right-4 space-y-2">
-          {notifications.map((message, index) => (
-            <Notification key={index} id={index} message={message} removeNotification={removeNotification} />
-          ))}
-        </div>
+
         {/* 
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes> */}
+      </div>
+
+      <div className=" notification-container fixed z-[999] pointer-events-none bottom-4 -right-20 space-y-2">
+          {notifications.map((message, index) => (
+            <Notification key={index} id={index} message={message} removeNotification={removeNotification} />
+          ))}
       </div>
     </>
   )

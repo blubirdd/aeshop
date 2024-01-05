@@ -1,17 +1,36 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import profileImage from '/profile.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom';  
 import { ShopContext } from '../../context/ShopContext'
 
 function Navbar() {
 
-  const { getTotalOfCartProducts } = useContext(ShopContext)
-  const { products, cartItems } = useContext(ShopContext)
+  const { getTotalOfCartProducts } = useContext(ShopContext);
+  const { products, cartItems } = useContext(ShopContext);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate(); 
+  const location = useLocation();
 
+  const handleSearch = () => {
+    navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
+  useEffect(() => {
+    setSearchQuery('');
+  }, [location]);
+
+  let displayedItemCount = 0;
+  
   return (
     <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-40 w-full bg-white text-sm py-2.5 sm:py-4 dark:bg-slate-900 dark:border-gray-700">
       <nav className="flex basis-full max-w-7xl items-center w-full mx-auto px-4 sm:px-6 lg:px-8" aria-label="Global">
-        <div className="me-5 md:me-8">
+        <div className="me-5 md:me-5">
           <a className="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
             href="/"
             aria-label="Brand">
@@ -30,22 +49,29 @@ function Navbar() {
           <div className="hidden sm:block">
             <label htmlFor="icon" className="sr-only">Search</label>
             <div className="relative">
-              <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
+                className="py-2 pe-4 ps-2 block w-96 border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                placeholder="Search for an item"
+              />
+              <button
+                type="button"
+                onClick={handleSearch}
+                className="absolute inset-y-0 end-0 flex items-center px-4 text-gray-500 hover:text-gray-700 cursor-pointer"
+              >
+              <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20">
                 <svg className="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
               </div>
-              <input type="text"
-                id="icon"
-                name="icon"
-                className="py-2 pe-4 ps-10 block w-96 border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                placeholder="Search for a product"
-              />
+              </button>
             </div>
           </div>
 
           <div className="flex flex-row items-center justify-end gap-3">
-
             {/* notification button */}
             <button
               type="button"
@@ -81,28 +107,34 @@ function Navbar() {
                     Recently Added Items
                   </span>
 
-                  {products.map((product) => {
-                    if (cartItems[product.id] > 0) {
-                      return (
-                        <div className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700">
-                          <img src={product.image} className="w-10 h-auto" />
-                          <span>{product.name} </span>
-                          <span className="ml-auto text-orange-500">₱{product.new_price.toLocaleString()} </span>
-                        </div>
-                      );
-                    }
-                  }
+                  {getTotalOfCartProducts() === 0 ? (
+                    <p className="p-4 text-gray-800">
+                      There are no items in your cart
+                    </p>
+                  ) : (
+                    products.map((product) => {
+                      if (cartItems[product.id] > 0 && displayedItemCount < 5) {
+                        displayedItemCount++;
+                        return (
+                          <Link to="/cart" key={product.id} className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700">
+                            <img src={product.image} className="w-10 h-auto" alt={`Product: ${product.name}`} />
+                            <span>{product.name} </span>
+                            <span className="ml-auto text-orange-500">₱{product.new_price.toLocaleString()} </span>
+                          </Link>
+                        );
+                      }
+                    })
                   )}
 
                 </div>
-                <div className="py-2 first:pt-0 last:pb-0">
+                {/* <div className="py-2 first:pt-0 last:pb-0">
                   <span className="block py-2 px-3 text-xs font-medium uppercase text-gray-400 dark:text-gray-500">
                     Shopping Cart
                   </span>
                   <Link to="/cart" className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700" href="#">
                     View my Shopping Cart
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
 

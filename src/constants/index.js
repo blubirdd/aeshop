@@ -43,7 +43,7 @@ export const products = [
     stock: 1,
     new_price: 120,
     old_price: 150,
-    featured: 'false',
+    featured: true,
   },
   {
     id: 2,
@@ -55,7 +55,7 @@ export const products = [
     stock: 5,
     new_price: 40,
     old_price: 50,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 3,
@@ -67,7 +67,7 @@ export const products = [
     stock: 3,
     new_price: 180,
     old_price: 200,
-    featured: 'false',
+    featured: true,
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ export const products = [
     stock: 2,
     new_price: 100,
     old_price: 120,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 5,
@@ -91,7 +91,7 @@ export const products = [
     stock: 10,
     new_price: 25,
     old_price: 300,
-    featured: 'false',
+    featured: true,
   },
   {
     id: 6,
@@ -103,7 +103,7 @@ export const products = [
     stock: 10,
     new_price: 30000,
     old_price: 23000,
-    featured: 'false',
+    featured: true  ,
   },
 
   {
@@ -116,7 +116,7 @@ export const products = [
     stock: 5,
     new_price: 100,
     old_price: 120,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 9,
@@ -128,7 +128,7 @@ export const products = [
     stock: 3,
     new_price: 150,
     old_price: 180,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 11,
@@ -140,7 +140,7 @@ export const products = [
     stock: 12,
     new_price: 45,
     old_price: 60,
-    featured: 'false',
+    featured: true,
   },
   {
     id: 12,
@@ -152,7 +152,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: true,
   },
   {
     id: 13,
@@ -164,7 +164,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 14,
@@ -176,7 +176,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 10,
@@ -188,7 +188,7 @@ export const products = [
     stock: 7,
     new_price: 100,
     old_price: 120,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 8,
@@ -200,7 +200,7 @@ export const products = [
     stock: 8,
     new_price: 75,
     old_price: 90,
-    featured: 'false',
+    featured: false,
   },
 
   // artworks
@@ -214,7 +214,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 16,
@@ -226,7 +226,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 17,
@@ -238,7 +238,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 18,
@@ -250,7 +250,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 19,
@@ -262,7 +262,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 20,
@@ -274,7 +274,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
 
   //collectibles
@@ -288,7 +288,7 @@ export const products = [
     stock: 4,
     new_price: 190,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 22,
@@ -300,7 +300,7 @@ export const products = [
     stock: 8,
     new_price: 180,
     old_price: 210,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 23,
@@ -312,7 +312,7 @@ export const products = [
     stock: 12,
     new_price: 250,
     old_price: 220,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 24,
@@ -324,7 +324,7 @@ export const products = [
     stock: 15,
     new_price: 130,
     old_price: 160,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 25,
@@ -336,7 +336,7 @@ export const products = [
     stock: 6,
     new_price: 190,
     old_price: 170,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 26,
@@ -348,7 +348,7 @@ export const products = [
     stock: 10,
     new_price: 120,
     old_price: 150,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 27,
@@ -360,7 +360,7 @@ export const products = [
     stock: 20,
     new_price: 80,
     old_price: 110,
-    featured: 'false',
+    featured: true,
   },
   {
     id: 28,
@@ -372,7 +372,7 @@ export const products = [
     stock: 5,
     new_price: 270,
     old_price: 240,
-    featured: 'false',
+    featured: true,
   },
   {
     id: 29,
@@ -384,7 +384,7 @@ export const products = [
     stock: 18,
     new_price: 150,
     old_price: 180,
-    featured: 'false',
+    featured: false,
   },
   {
     id: 30,
@@ -393,9 +393,9 @@ export const products = [
     description: 'Figurine',
     category: 'Collectibles',
     image: p30,
-    stock: 7,
+    stock: 0,
     new_price: 200,
     old_price: 170,
-    featured: 'false',
+    featured: false,
   },
 ];

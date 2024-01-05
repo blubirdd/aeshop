@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 
-function Notification({ id, message, removeNotification }) {
+function Notification({ id, status, message, removeNotification }) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      removeNotification(id);
+      // removeNotification(id);
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -16,7 +16,7 @@ function Notification({ id, message, removeNotification }) {
 
   return (
     <div
-      className={`flex flex-col p-4 z-50 bg-white border border-gray-200 rounded-md shadow-lg dark:bg-gray-800 dark:border-gray-700  transition duration-500 transform ease-in-out
+      className={`flex flex-col p-4 z-50 w-3/4 bg-white border border-gray-200 rounded-md shadow-lg dark:bg-gray-800 dark:border-gray-700  transition duration-500 transform ease-in-out
         ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
       role="alert"
     >

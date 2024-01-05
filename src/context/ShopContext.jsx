@@ -36,17 +36,19 @@ function ShopContextProvider({ children }) {
     setCartItems((prev) => ({...prev,[itemID]:prev[itemID] + 1}));
   }
 
+  //decrease quantity
   const removeFromCart = (itemID) =>{
     setCartItems((prev) => ({...prev,[itemID]:prev[itemID] - 1}));
   }
 
+  //delete item from cart
   const deleteFromCart = (itemID) => {
     setCartItems((prev) => ({ ...prev, [itemID]: 0 }));
     setNotification("Item removed from cart successfully");
     console.log("Item removed from cart successfully");
   };
 
-
+  //get total amount
   const getTotalCartAmount = () =>{
     let totalAmount = 0;
     for(const item in cartItems){
@@ -58,6 +60,7 @@ function ShopContextProvider({ children }) {
     return totalAmount;
   }
 
+  //get number of unique products
   const getTotalOfCartProducts = () => {
     let totalCartItems = 0;
     for (const item in cartItems) {

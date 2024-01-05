@@ -7,12 +7,12 @@ function Category({ banner, description, category }) {
 
   return (
     <>
-      <div class="mx-7 h-52 sm:mt-4 sm:mb-4 shadow-gray-800 shadow-sm rounded-sm overflow-hidden bg-cover bg-center" 
+      <div className="mx-7 h-52 sm:mt-4 sm:mb-4 shadow-gray-800 shadow-sm rounded-sm overflow-hidden bg-cover bg-center" 
         style={{ backgroundImage: `url(${banner})` }}>
-        <div class="bg-gray-900 bg-opacity-80 flex items-center h-full">
-          <div class="px-10 max-w-3xl">
-            <h2 class="text-4xl text-white font-semibold">{category}</h2>
-            <p class="mt-2 text-gray-300">{description}</p>
+        <div className="bg-gray-900 bg-opacity-80 flex items-center h-full">
+          <div className="px-10 max-w-3xl">
+            <h2 className="text-4xl text-white font-semibold">{category}</h2>
+            <p className="mt-2 text-gray-300">{description}</p>
           </div>
         </div>
       </div>
