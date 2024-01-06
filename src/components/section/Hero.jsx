@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function Hero() {
   return (
     <>
-      <div className="hero bg-gray-50 dark:bg-gray-900 sm:h-screen">
+      <div className="hero bg-gray-50 dark:bg-gray-900">
         <div className="grid px-4 py-8 mx-auto gap-2 lg:grid-cols-12">
           {/* image column */}
           <div className="lg:col-span-5 lg:flex sm:order-2" data-aos="fade-left" data-aos-delay="300">

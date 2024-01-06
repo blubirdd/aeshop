@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Banners() {
   return (
     <>
-      <div id="featured"  className="mx-auto pb-4 pt-8">
+      <div id="featured"  className="mx-auto pb-4 pt-10">
         <h2 className="pb-1 text-5xl font-bold text-center text-gray-800 dark:text-gray-400">
           Featured Items
         </h2>
