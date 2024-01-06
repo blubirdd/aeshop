@@ -53,7 +53,7 @@ function ProductDisplay({ product }) {
   return (
     <>
       <div className="overflow-hidden bg-neutral-50 font-poppins dark:bg-gray-800">
-        <div className="max-w-7xl px-4 py-4 mt-12 mx-auto lg:py-8 md:px-6">
+        <div className="max-w-7xl px-4 py-4 mt-2 mx-auto lg:py-8 md:px-6">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4 md:w-1/2 ">
               <div className="sticky top-0 z-10 overflow-hidden bg-white rounded-md p-2">
@@ -68,11 +68,11 @@ function ProductDisplay({ product }) {
                     {product.name}
                   </h2>
 
-                  <p className="inline-block text-2xl mb-4 font-semibold text-gray-700 dark:text-gray-400 ">
+                  <p className="inline-block text-3xl mb-4 font-bold text-sky-900 dark:text-gray-400 ">
                     <span>₱{product.new_price.toLocaleString()} &nbsp;</span>
                   </p>
 
-                  <p className="max-w-md mb-1 text-gray-700 dark:text-gray-400">
+                  <p className="max-w-md mb-1 text-gray-500 dark:text-gray-400 text-sm">
                     Stock: {product.stock}
                   </p>
 

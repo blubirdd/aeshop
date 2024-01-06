@@ -7,7 +7,7 @@ import RelatedProducts from '../components/product/RelatedProducts';
 function Product() {
   const { products } = useContext(ShopContext);
   const { productName } = useParams();
-  
+
   const product = products.find(
     (product) => encodeURIComponent(product.name.toLowerCase().replace(/\s+/g, '-')) === productName
   );
@@ -19,10 +19,9 @@ function Product() {
   return (
     <>
       <ProductDisplay product={product} />
-      <RelatedProducts />
+      <RelatedProducts productID={product.id} />
     </>
   );
 }
 
-
-export default Product
+export default Product;
