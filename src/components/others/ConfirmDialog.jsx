@@ -4,7 +4,7 @@ function ConfirmDialog({ message, onConfirm, onCancel }) {
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-[100] bg-black bg-opacity-50">
       <div className="w-full sm:max-w-lg sm:w-full m-3 sm:mx-auto">
-        <div className="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+        <div className="flex flex-col bg-white border shadow-sm rounded-lg pointer-events-auto dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
           <div className="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
             <h3 className="font-bold text-gray-800 dark:text-white">
               Confirmation

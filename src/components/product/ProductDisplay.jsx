@@ -113,7 +113,7 @@ function ProductDisplay({ product }) {
                       {/* add to cart button  */}
                       <button
                         onClick={() => { handleAddToCart() }}
-                        className="w-80 h-10 p-2 mr-4 rounded-md text-lg font-bold bg-sky-700 hover:bg-sky-800 disabled:bg-gray-700 dark:text-gray-200 text-gray-50   dark:bg-blue-600 dark:hover:bg-blue-500"
+                        className="w-full md:w-80 h-10 p-2 mr-4 rounded-md text-lg font-bold bg-sky-700 hover:bg-sky-600 disabled:bg-gray-700 dark:text-gray-200 text-gray-50   dark:bg-blue-600 dark:hover:bg-blue-500"
                         disabled={quantity > stock || cartItems[product.id] >= stock}
                       >
                         Add to cart

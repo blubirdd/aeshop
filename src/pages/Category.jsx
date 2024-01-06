@@ -7,15 +7,16 @@ function Category({ banner, description, category }) {
 
   return (
     <>
-      <div className="mx-7 h-52 sm:mt-4 sm:mb-4 shadow-gray-800 shadow-sm rounded-sm overflow-hidden bg-cover bg-center" 
+      <div className="mx-1 md:mx-7 h-52 sm:mt-4 sm:mb-4 shadow-gray-800 shadow-sm rounded-sm overflow-hidden bg-cover bg-center" 
         style={{ backgroundImage: `url(${banner})` }}>
-        <div className="bg-gray-900 bg-opacity-80 flex items-center h-full">
+        <div className="bg-gray-900 bg-opacity-60 flex items-center h-full">
           <div className="px-10 max-w-3xl">
             <h2 className="text-4xl text-white font-semibold">{category}</h2>
             <p className="mt-2 text-gray-300">{description}</p>
           </div>
         </div>
       </div>
+      <p className="ps-8 pt-4">Showing 1 out of 12 products</p>
       <div className="flex flex-wrap justify-center gap-x-4 gap-y-6 mx-auto my-6">
         {products.map((item) => {
           if (category === item.category) {

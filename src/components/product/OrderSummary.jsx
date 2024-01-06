@@ -19,11 +19,11 @@ function OrderSummary() {
         </select>
       </div>
       <div className="border-t mt-8">
-        <div className="flex font-semibold justify-between py-6 text-sm uppercase">
+        <div className="flex font-bold justify-between py-6 text-sm uppercase">
           <span>Total cost</span>
           <span>₱{(getTotalCartAmount() + 50).toLocaleString()}</span>
         </div>
-        <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+        <button className="bg-sky-700 font-semibold hover:bg-sky-600 py-3 text-md text-white uppercase w-full">Checkout</button>
       </div>
     </div>
   )

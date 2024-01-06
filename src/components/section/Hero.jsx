@@ -23,12 +23,15 @@ function Hero() {
             <p className="max-w-2xl mb-6 font-normal text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               Dive into a world of nostalgia, craftsmanship, technology and unparalleled uniqueness as we curate an exclusive collection of treasures and limited edition masterpieces.
             </p>
-            <Link className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-3xl border border-transparent bg-sky-800 text-white hover:bg-sky-900 disabled:opacity-50 disabled:pointer-events-none">
+            <a 
+            className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-3xl border border-transparent bg-sky-800 text-white hover:bg-sky-700 disabled:opacity-50 disabled:pointer-events-none duration-300 hover:scale-105"
+            href='#featured'
+            >
               SHOP NOW
               <svg className="w-4 h-4 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

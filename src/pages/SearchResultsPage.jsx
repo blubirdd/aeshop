@@ -20,7 +20,7 @@ function SearchResultsPage() {
 
   return (
     <div>
-      <h1 className="p-4">Search Results for "{searchQuery}"</h1>
+      <h1 className="ps-8 pt-4">Search Results for "{searchQuery}"</h1>
       <SearchResults searchResults={searchResults} />
     </div>
   );

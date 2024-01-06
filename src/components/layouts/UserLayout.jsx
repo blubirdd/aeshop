@@ -22,7 +22,7 @@ function UserLayout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tech" element={<Category category="Tech & Gadgets" description="Explore cutting-edge and collectible tech treasures. From vintage gadgets to limited edition releases, discover modern marvels that redefine innovation." banner={techBanner} />} />
-          <Route path="/toys" element={<Category category="Toys and Games" description="Rediscover the joy of play with our diverse Toys and Games collection. From modern board games to timeless classics, find entertainment that sparks laughter and fun for every age." banner={toysBanner} />} />
+          <Route path="/toys" element={<Category category="Toys and Games" description="Rediscover the joy of play with our diverse Toys and Games collection. From modern board games to cute plushies, find entertainment that sparks laughter and fun for every age." banner={toysBanner} />} />
           <Route path="/art" element={<Category category="Artworks" description="Transform your space with our stunning artworks. From vibrant contemporary prints to timeless paintings, find pieces that speak to your style and elevate your surroundings." banner={artBanner} />} />
           <Route path="/collectibles" element={<Category category="Collectibles" description="Explore the extraordinary in our diverse collectibles collection. Discover unique items that add character and charm to your life." banner={collectiblesBanner} />} />
           <Route path="/product" element={<Product />}>

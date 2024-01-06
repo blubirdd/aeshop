@@ -41,7 +41,7 @@ function CartItem() {
         />
       )}
 
-      <div className="w-full md:w-3/4 bg-white px-10 py-10">
+      <div className="cart-item-container w-full md:w-3/4 bg-white px-10 py-10 sm:overflow-auto sm:h-[600px]">
         <div className="flex justify-between pb-1">
           <h1 className="font-semibold text-2xl">My Cart</h1>
         </div>
@@ -58,18 +58,17 @@ function CartItem() {
             return (
               <div key={product.id} className="flex items-center hover:bg-gray-50 -mx-8 px-6 py-5 border-b-4 border-b-gray-100">
                 <div className="flex w-3/6">
-                  <div className="w-20">
-                    <img className="h-24 object-cover" src={product.image[0]} alt="" />
+                  <div className="w-24">
+                    <img className="h-auto object-contain" src={product.image[0]} alt="" />
                   </div>
-                  <div className="flex flex-col ml-4 flex-grow">
+                  <div className="flex flex-col ml-4 flex-grow mb-4">
                     <span className="font-bold text-md">{product.name}</span>
                     <span className="text-gray-500 text-sm">{product.description}</span>
-
                     <button
                       type="button"
                       onClick={() => showConfirmationDialog(product.id)}
                       className="group flex mt-auto font-semibold text-start hover:text-red-500 text-red-400 text-xs">
-                      <svg className="w-4 h-4 text-red-400 group-hover:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                      <svg className="w-3 h-3 text-red-400 group-hover:text-red-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                         <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z" />
                       </svg>
                       <span className="ps-1">Remove</span>
@@ -117,16 +116,16 @@ function CartItem() {
         {getTotalOfCartProducts() === 0 ? (
           <div>
             <p>There are no items in your cart</p>
-            <Link to="/" className="flex font-semibold text-indigo-600 text-sm mt-10">
-              <svg className="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+            <Link to="/" className="flex font-semibold text-sky-600 text-sm mt-10">
+              <svg className="fill-current mr-2 text-sky-600 w-4" viewBox="0 0 448 512">
                 <path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
               </svg>
               Browse Products
             </Link>
           </div>
         ) : (
-          <Link to="/" className="flex font-semibold text-indigo-600 text-sm mt-10">
-            <svg className="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+          <Link to="/" className="flex font-semibold text-sky-600 text-sm mt-10">
+            <svg className="fill-current mr-2 text-sky-600 w-4" viewBox="0 0 448 512">
               <path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
             </svg>
             Continue Shopping
