@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function OrderSummary() {
 
-  const { getTotalOfCartProducts, getTotalCartAmount } = useContext(ShopContext);
+  const { getTotalOfCartProducts, getTotalCartAmount, cartItems } = useContext(ShopContext);
 
   return (
     <div className="w-full md:w-1/3 mx-auto bg-white border border-gray-300 px-10 py-10">
@@ -24,9 +24,16 @@ function OrderSummary() {
           <span>Total cost</span>
           <span>₱{(getTotalCartAmount() + 50).toLocaleString()}</span>
         </div>
-        <Link to="/checkout">
-          <button className="bg-sky-700 font-semibold hover:bg-sky-600 py-3 text-md text-white uppercase w-full rounded-sm">Checkout</button>
-        </Link>
+        {getTotalOfCartProducts() >= 1 ? (
+          <Link to="/checkout">
+            <button className="bg-sky-700 font-semibold hover:bg-sky-600 py-3 text-md text-white uppercase w-full rounded-md">Checkout</button>
+          </Link>
+        ) : (
+          <>
+            <button disabled className="bg-gray-300 cursor-not-allowed font-semibold py-3 text-md text-white uppercase w-full rounded-md">Checkout</button>
+            <p className="text-center text-red-400 text-sm">There are no items in your cart</p>
+          </>
+        )}
       </div>
     </div>
   )
