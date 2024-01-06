@@ -13,6 +13,7 @@ import techBanner from '/banners/techBanner2.jpg'
 import toysBanner from '/banners/toysBanner.jpg'
 import artBanner from '/banners/artBanner.jpg'
 import collectiblesBanner from '/banners/collectiblesBanner.jpg'
+
 function UserLayout() {
   return (
     <>

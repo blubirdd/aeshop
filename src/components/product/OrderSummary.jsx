@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { ShopContext } from '../../context/ShopContext'
+import { Link } from 'react-router-dom';
 
 function OrderSummary() {
 
-  const { getTotalOfCartProducts ,getTotalCartAmount } = useContext(ShopContext);
+  const { getTotalOfCartProducts, getTotalCartAmount } = useContext(ShopContext);
 
   return (
     <div className="w-full md:w-1/3 mx-auto bg-white border border-gray-300 px-10 py-10">
@@ -23,7 +24,9 @@ function OrderSummary() {
           <span>Total cost</span>
           <span>₱{(getTotalCartAmount() + 50).toLocaleString()}</span>
         </div>
-        <button className="bg-sky-700 font-semibold hover:bg-sky-600 py-3 text-md text-white uppercase w-full">Checkout</button>
+        <Link to="/checkout">
+          <button className="bg-sky-700 font-semibold hover:bg-sky-600 py-3 text-md text-white uppercase w-full rounded-sm">Checkout</button>
+        </Link>
       </div>
     </div>
   )

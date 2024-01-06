@@ -8,6 +8,8 @@ import { ShopContext } from './context/ShopContext';
 
 import UserLayout from './components/layouts/UserLayout';
 import GuestLayout from './components/layouts/GuestLayout';
+import Checkout from './pages/Checkout';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -40,6 +42,7 @@ function App() {
       <Routes>
         <Route path="*" element={<UserLayout />} />
         <Route path="/guest/*" element={<GuestLayout />} />
+        <Route path="/checkout/" element={<Checkout />} />
       </Routes>
 
       <div className=" notification-container fixed z-[999] pointer-events-none bottom-4 -right-20 space-y-2">

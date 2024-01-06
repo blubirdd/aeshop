@@ -57,9 +57,9 @@ function CartItem() {
             return (
               <div key={product.id} className="flex items-center hover:bg-gray-50 -mx-8 px-5 sm:px-6 py-5 border-b-4 border-b-gray-100">
                 <div className="flex w-3/5">
-                  <div className="w-16 sm:w-24">
+                  <Link to={`/product/${encodeURIComponent(product.name.toLowerCase().replace(/\s+/g, '-'))}`} className="w-16 sm:w-24">
                     <img className="h-auto object-contain" src={product.image[0]} alt="" />
-                  </div>
+                  </Link>
                   <div className="flex flex-col ml-4 flex-grow mb-2">
                     <span className="font-bold text-xs sm:text-lg">{product.name}</span>
                     <span className="text-sky-900 font-bold py-1 text-xs md:text-sm">₱{product.new_price.toLocaleString()}</span>

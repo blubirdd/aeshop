@@ -31,11 +31,11 @@ function Navbar() {
     <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-40 w-full bg-white text-sm py-2.5 sm:py-4 dark:bg-slate-900 dark:border-gray-700">
       <nav className="flex basis-full max-w-7xl items-center w-full mx-auto px-2 sm:px-4 lg:px-6" aria-label="Global">
         <div className="me-2 md:me-2">
-          <a 
+          <a
             className="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
             href="/"
           >
-            <img src={aeshop} className="w-40" />
+            <img src={aeshop} className="w-36" />
           </a>
         </div>
         <div className="w-full flex items-center justify-end ms-auto sm:justify-between sm:gap-x-3 sm:order-3">
@@ -138,17 +138,15 @@ function Navbar() {
                           );
                         }
                       })
+
                     )}
 
                   </div>
-                  {/* <div className="py-2 first:pt-0 last:pb-0">
-                  <span className="block py-2 px-3 text-xs font-medium uppercase text-gray-400 dark:text-gray-500">
-                    Shopping Cart
-                  </span>
-                  <Link to="/cart" className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700" href="#">
-                    View my Shopping Cart
-                  </Link>
-                </div> */}
+                  <div className="py-2 first:pt-0 last:pb-0">
+                    <Link to="/cart" className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700" href="#">
+                      View my Shopping Cart
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}

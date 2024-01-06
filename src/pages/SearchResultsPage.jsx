@@ -19,8 +19,9 @@ function SearchResultsPage() {
   
 
   return (
-    <div>
-      <h1 className="ps-8 pt-4">Search Results for "{searchQuery}"</h1>
+    <div className="mx-8">
+      <p className="pt-4 font-bold text-2xl">Search Results for "{searchQuery}"</p>
+      <p className="py-2">Showing {searchResults.length} of {searchResults.length} items</p>
       <SearchResults searchResults={searchResults} />
     </div>
   );

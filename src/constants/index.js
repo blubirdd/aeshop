@@ -1,124 +1,186 @@
-import p99 from '/src/assets/products/99.jpg';
-import p1 from '/src/assets/products/1.jpg';
-import p1_2 from '/src/assets/products/1_2.jpg';
-import p1_3 from '/src/assets/products/1_3.jpg';
-import p1_4 from '/src/assets/products/1_4.jpg';
+import p99 from '/src/assets/products/99.webp';
+import p1 from '/src/assets/products/1.webp';
+import p1_2 from '/src/assets/products/1_2.webp';
+import p1_3 from '/src/assets/products/1_3.webp';
+import p1_4 from '/src/assets/products/1_4.webp';
 
-import p2 from '/src/assets/products/2.jpg';
-import p2_2 from '/src/assets/products/2_2.jpg';
-import p2_3 from '/src/assets/products/2_3.jpg';
+import p2 from '/src/assets/products/2.webp';
+import p2_2 from '/src/assets/products/2_2.webp';
+import p2_3 from '/src/assets/products/2_3.webp';
 
-import p3 from '/src/assets/products/3.jpg';
-import p3_2 from '/src/assets/products/3_2.jpg';
-import p3_3 from '/src/assets/products/3_3.jpg';
+import p3 from '/src/assets/products/3.webp';
+import p3_2 from '/src/assets/products/3_2.webp';
+import p3_3 from '/src/assets/products/3_3.webp';
 
-import p4 from '/src/assets/products/4.jpg';
-import p4_2 from '/src/assets/products/4_2.jpg';
-import p4_3 from '/src/assets/products/4_3.jpg';
+import p4 from '/src/assets/products/4.webp';
+import p4_2 from '/src/assets/products/4_2.webp';
+import p4_3 from '/src/assets/products/4_3.webp';
 
-import p5 from '/src/assets/products/5.jpg';
-import p5_2 from '/src/assets/products/5_2.jpg';
-import p5_3 from '/src/assets/products/5_3.jpg';
+import p5 from '/src/assets/products/5.webp';
+import p5_2 from '/src/assets/products/5_2.webp';
+import p5_3 from '/src/assets/products/5_3.webp';
 
-import p6 from '/src/assets/products/6.jpg';
-import p6_2 from '/src/assets/products/6_2.jpg';
-import p6_3 from '/src/assets/products/6_3.jpg';
+import p6 from '/src/assets/products/6.webp';
+import p6_2 from '/src/assets/products/6_2.webp';
+import p6_3 from '/src/assets/products/6_3.webp';
 
-import p7 from '/src/assets/products/7.jpg';
-import p7_2 from '/src/assets/products/7_2.jpg';
-import p7_3 from '/src/assets/products/7_3.jpg';
+import p7 from '/src/assets/products/7.webp';
+import p7_2 from '/src/assets/products/7_2.webp';
+import p7_3 from '/src/assets/products/7_3.webp';
 
-import p8 from '/src/assets/products/8.jpg';
-import p8_2 from '/src/assets/products/8_2.jpg';
-import p8_3 from '/src/assets/products/8_3.jpg';
+import p8 from '/src/assets/products/8.webp';
+import p8_2 from '/src/assets/products/8_2.webp';
+import p8_3 from '/src/assets/products/8_3.webp';
 
-import p9 from '/src/assets/products/9.jpg';
-import p9_2 from '/src/assets/products/9_2.jpg';
-import p9_3 from '/src/assets/products/9_3.jpg';
+import p9 from '/src/assets/products/9.webp';
+import p9_2 from '/src/assets/products/9_2.webp';
+import p9_3 from '/src/assets/products/9_3.webp';
 
-import p10 from '/src/assets/products/10.jpg';
-import p10_2 from '/src/assets/products/10_2.jpg';
-import p10_3 from '/src/assets/products/10_3.jpg';
+import p10 from '/src/assets/products/10.webp';
+import p10_2 from '/src/assets/products/10_2.webp';
+import p10_3 from '/src/assets/products/10_3.webp';
 
-import p11 from '/src/assets/products/11.jpg';
-import p11_2 from '/src/assets/products/11_2.jpg';
-import p11_3 from '/src/assets/products/11_3.jpg';
+import p11 from '/src/assets/products/11.webp';
+import p11_2 from '/src/assets/products/11_2.webp';
+import p11_3 from '/src/assets/products/11_3.webp';
 
-import p12 from '/src/assets/products/12.jpg';
-import p12_2 from '/src/assets/products/12_2.jpg';
-import p12_3 from '/src/assets/products/12_3.jpg';
+import p12 from '/src/assets/products/12.webp';
+import p12_2 from '/src/assets/products/12_2.webp';
+import p12_3 from '/src/assets/products/12_3.webp';
 
-import p13 from '/src/assets/products/13.jpg';
-import p13_2 from '/src/assets/products/13_2.jpg';
-import p13_3 from '/src/assets/products/13_3.jpg';
+import p13 from '/src/assets/products/13.webp';
+import p13_2 from '/src/assets/products/13_2.webp';
+import p13_3 from '/src/assets/products/13_3.webp';
 
-import p14 from '/src/assets/products/14.jpg';
-import p14_2 from '/src/assets/products/14_2.jpg';
-import p14_3 from '/src/assets/products/14_3.jpg';
+import p14 from '/src/assets/products/14.webp';
+import p14_2 from '/src/assets/products/14_2.webp';
+import p14_3 from '/src/assets/products/14_3.webp';
 
-import p15 from '/src/assets/products/15.jpg';
-import p15_2 from '/src/assets/products/15_2.jpg';
-import p15_3 from '/src/assets/products/15_3.jpg';
+import p15 from '/src/assets/products/15.webp';
+import p15_2 from '/src/assets/products/15_2.webp';
+import p15_3 from '/src/assets/products/15_3.webp';
 
-import p16 from '/src/assets/products/16.jpg';
-import p16_2 from '/src/assets/products/16_2.jpg';
-import p16_3 from '/src/assets/products/16_3.jpg';
+import p16 from '/src/assets/products/16.webp';
+import p16_2 from '/src/assets/products/16_2.webp';
+import p16_3 from '/src/assets/products/16_3.webp';
 
-import p17 from '/src/assets/products/17.jpg';
-import p17_2 from '/src/assets/products/17_2.jpg';
-import p17_3 from '/src/assets/products/17_3.jpg';
+import p17 from '/src/assets/products/17.webp';
+import p17_2 from '/src/assets/products/17_2.webp';
+import p17_3 from '/src/assets/products/17_3.webp';
 
-import p18 from '/src/assets/products/18.jpg';
-import p18_2 from '/src/assets/products/18_2.jpg';
-import p18_3 from '/src/assets/products/18_3.jpg';
+import p18 from '/src/assets/products/18.webp';
+import p18_2 from '/src/assets/products/18_2.webp';
+import p18_3 from '/src/assets/products/18_3.webp';
 
-import p19 from '/src/assets/products/19.jpg';
-import p19_2 from '/src/assets/products/19_2.jpg';
-import p19_3 from '/src/assets/products/19_3.jpg';
+import p19 from '/src/assets/products/19.webp';
+import p19_2 from '/src/assets/products/19_2.webp';
+import p19_3 from '/src/assets/products/19_3.webp';
 
-import p20 from '/src/assets/products/20.jpg';
-import p20_2 from '/src/assets/products/20_2.jpg';
-import p20_3 from '/src/assets/products/20_3.jpg';
+import p20 from '/src/assets/products/20.webp';
+import p20_2 from '/src/assets/products/20_2.webp';
+import p20_3 from '/src/assets/products/20_3.webp';
 
-import p21 from '/src/assets/products/21.jpg';
-import p21_2 from '/src/assets/products/21_2.jpg';
-import p21_3 from '/src/assets/products/21_3.jpg';
+import p21 from '/src/assets/products/21.webp';
+import p21_2 from '/src/assets/products/21_2.webp';
+import p21_3 from '/src/assets/products/21_3.webp';
 
-import p22 from '/src/assets/products/22.jpg';
-import p22_2 from '/src/assets/products/22_2.jpg';
-import p22_3 from '/src/assets/products/22_3.jpg';
+import p22 from '/src/assets/products/22.webp';
+import p22_2 from '/src/assets/products/22_2.webp';
+import p22_3 from '/src/assets/products/22_3.webp';
 
-import p23 from '/src/assets/products/23.jpg';
-import p23_2 from '/src/assets/products/23_2.jpg';
-import p23_3 from '/src/assets/products/23_3.jpg';
+import p23 from '/src/assets/products/23.webp';
+import p23_2 from '/src/assets/products/23_2.webp';
+import p23_3 from '/src/assets/products/23_3.webp';
 
-import p24 from '/src/assets/products/24.jpg';
-import p24_2 from '/src/assets/products/24_2.jpg';
-import p24_3 from '/src/assets/products/24_3.jpg';
+import p24 from '/src/assets/products/24.webp';
+import p24_2 from '/src/assets/products/24_2.webp';
+import p24_3 from '/src/assets/products/24_3.webp';
 
-import p25 from '/src/assets/products/25.jpg';
-import p25_2 from '/src/assets/products/25_2.jpg';
-import p25_3 from '/src/assets/products/25_3.jpg';
+import p25 from '/src/assets/products/25.webp';
+import p25_2 from '/src/assets/products/25_2.webp';
+import p25_3 from '/src/assets/products/25_3.webp';
 
-import p26 from '/src/assets/products/26.jpg';
-import p26_2 from '/src/assets/products/26_2.jpg';
-import p26_3 from '/src/assets/products/26_3.jpg';
+import p26 from '/src/assets/products/26.webp';
+import p26_2 from '/src/assets/products/26_2.webp';
+import p26_3 from '/src/assets/products/26_3.webp';
 
-import p27 from '/src/assets/products/27.jpg';
-import p27_2 from '/src/assets/products/27_2.jpg';
-import p27_3 from '/src/assets/products/27_3.jpg';
+import p27 from '/src/assets/products/27.webp';
+import p27_2 from '/src/assets/products/27_2.webp';
+import p27_3 from '/src/assets/products/27_3.webp';
 
-import p28 from '/src/assets/products/28.jpg';
-import p28_2 from '/src/assets/products/28_2.jpg';
-import p28_3 from '/src/assets/products/28_3.jpg';
+import p28 from '/src/assets/products/28.webp';
+import p28_2 from '/src/assets/products/28_2.webp';
+import p28_3 from '/src/assets/products/28_3.webp';
 
-import p29 from '/src/assets/products/29.jpg';
-import p29_2 from '/src/assets/products/29_2.jpg';
-import p29_3 from '/src/assets/products/29_3.jpg';
+import p29 from '/src/assets/products/29.webp';
+import p29_2 from '/src/assets/products/29_2.webp';
+import p29_3 from '/src/assets/products/29_3.webp';
 
-import p30 from '/src/assets/products/30.jpg';
-import p30_2 from '/src/assets/products/30_2.jpg';
-import p30_3 from '/src/assets/products/30_3.jpg';
+import p30 from '/src/assets/products/30.webp';
+import p30_2 from '/src/assets/products/30_2.webp';
+import p30_3 from '/src/assets/products/30_3.webp';
+
+import p31 from '/src/assets/products/31.webp';
+import p31_2 from '/src/assets/products/31_2.webp';
+import p31_3 from '/src/assets/products/31_3.webp';
+
+import p32 from '/src/assets/products/32.webp';
+import p32_2 from '/src/assets/products/32_2.webp';
+import p32_3 from '/src/assets/products/32_3.webp';
+import p32_4 from '/src/assets/products/32_4.webp';
+
+import p33 from '/src/assets/products/33.webp';
+import p33_2 from '/src/assets/products/33_2.webp';
+import p33_3 from '/src/assets/products/33_3.webp';
+import p33_4 from '/src/assets/products/33_4.webp';
+
+import p34 from '/src/assets/products/34.webp';
+import p34_2 from '/src/assets/products/34_2.webp';
+import p34_3 from '/src/assets/products/34_3.webp';
+import p34_4 from '/src/assets/products/34_4.webp';
+
+import p35 from '/src/assets/products/35.webp';
+import p35_2 from '/src/assets/products/35_2.webp';
+import p35_3 from '/src/assets/products/35_3.webp';
+
+import p36 from '/src/assets/products/36.webp';
+import p36_2 from '/src/assets/products/36_2.webp';
+import p36_3 from '/src/assets/products/36_3.webp';
+
+import p37 from '/src/assets/products/37.webp';
+import p37_2 from '/src/assets/products/37_2.webp';
+import p37_3 from '/src/assets/products/37_3.webp';
+
+import p38 from '/src/assets/products/38.webp';
+import p38_2 from '/src/assets/products/38_2.webp';
+import p38_3 from '/src/assets/products/38_3.webp';
+import p38_4 from '/src/assets/products/38_4.webp';
+
+import p39 from '/src/assets/products/39.webp';
+import p39_2 from '/src/assets/products/39_2.webp';
+import p39_3 from '/src/assets/products/39_3.webp';
+
+import p40 from '/src/assets/products/40.webp';
+import p40_2 from '/src/assets/products/40_2.webp';
+import p40_3 from '/src/assets/products/40_3.webp';
+
+import p41 from '/src/assets/products/41.webp';
+import p41_2 from '/src/assets/products/41_2.webp';
+import p41_3 from '/src/assets/products/41_3.webp';
+import p41_4 from '/src/assets/products/41_4.webp';
+
+import p42 from '/src/assets/products/42.webp';
+import p42_2 from '/src/assets/products/42_2.webp';
+import p42_3 from '/src/assets/products/42_3.webp';
+
+import p43 from '/src/assets/products/43.webp';
+import p43_2 from '/src/assets/products/43_2.webp';
+import p43_3 from '/src/assets/products/43_3.webp';
+import p43_4 from '/src/assets/products/43_4.webp';
+
+import p44 from '/src/assets/products/44.webp';
+import p44_2 from '/src/assets/products/44_2.webp';
+import p44_3 from '/src/assets/products/44_3.webp';
 
 export const products = [
   {
@@ -128,9 +190,9 @@ export const products = [
     description: 'Game Controller',
     category: 'Tech & Gadgets',
     image: [p1, p1_2, p1_3, p1_4],
-    stock: 1,
-    new_price: 120,
-    old_price: 150,
+    stock: 49,
+    new_price: 499,
+    old_price: 1299,
     featured: true,
   },
   {
@@ -139,10 +201,10 @@ export const products = [
     details: 'The PS5™ console unleashes new gaming possibilities that you never anticipated. Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio, and a all-new generation of incredible PlayStation® games. Harness the power of a custom CPU, GPU, and SSD with Integrated I/O that rewrite the rules of what a PlayStation® console can do.',
     description: 'Game Console',
     category: 'Tech & Gadgets',
-    image: [p2, p2_2, p2  ],
-    stock: 5,
-    new_price: 40,
-    old_price: 50,
+    image: [p2, p2_2, p2_3  ],
+    stock: 0,
+    new_price: 19999,
+    old_price: 25000,
     featured: false,
   },
   {
@@ -152,10 +214,70 @@ export const products = [
     description: 'Game Controller',
     category: 'Tech & Gadgets',
     image: [p3,p3_2,p3_3],
-    stock: 3,
-    new_price: 180,
-    old_price: 200,
+    stock: 12,
+    new_price: 1999,
+    old_price: 2999,
+    featured: false,
+  },
+  {
+    id: 40,
+    name: 'LOGITECH G304 LIGHTSPEED WIRELESS GAMING MOUSE',
+    details: 'G304 is a LIGHTSPEED wireless gaming mouse designed for serious performance with latest technology innovations at an affordable price point. 12,000 DPI Performance, 10x Efficiency - HERO sensor is the next-gen optical gaming sensor from Logitech G that accomplishes both incredible performance and unprecedented efficiency. Because, in wireless gaming, there can be no compromises. Program DPI from 200 - 12,000 and save up to 5 profiles on the onboard memory.',
+    description: 'Gaming Mouse',
+    category: 'Tech & Gadgets',
+    image: [p40,p40_2,p40_3,],
+    stock: 0,
+    new_price: 1199,
+    old_price: 1500,
+    featured: false,
+  },
+  {
+    id: 41,
+    name: 'RAZER VIPER MINI WIRED GAMING MOUSE',
+    details: 'Experience hard-hitting performance with our lightest mouse ever created—a lean ultra-lightweight build that makes control effortless Featuring cutting-edge optical mouse switches a precise8 500 DPI sensor and Razer Speedflex Cable for supreme accuracy and speed. The #1 Best-Selling Gaming Peripherals Manufacturer in the US Source - The NPD Group U S Retail Tracking Service Keyboards Mice PC Headset/Pc Microphone Gaming Designed based on dollar sales Jan 2017- Dec 2019',
+    description: 'Gaming Mouse',
+    category: 'Tech & Gadgets',
+    image: [p41,p41_2,p41_3,p41_4],
+    stock: 2,
+    new_price: 200,
+    old_price: 170,
+    featured: false,
+  },
+  {
+    id: 42,
+    name: 'Steam Deck 512GB NVME SSD',
+    details: 'The Steam Deck sports a 7-inch 1280 x 800 LCD touchscreen that runs a refresh rate of 60Hz. Under the hood, it is equipped with a custom AMD APU processor, a Zen 2 CPU, an RDNA 2 GPU, has 16GB of LPDDR 5 RAM, and has storage options of 64GB eMMC, 256GB NVMe SSD, and 512GB NVMe SSD. All models include a high-speed microSD card slot for more storage. Furthermore, the Steam Deck runs on SteamOS 3.0 with Proton, a compatibility layer that makes it possible to run your games without any porting work needed from developers.',
+    description: 'Handheld gaming computer',
+    category: 'Tech & Gadgets',
+    image: [p42,p42_2,p42_3,],
+    stock: 99,
+    new_price: 15499,
+    old_price: 21999,
     featured: true,
+  },
+  {
+    id: 43,
+    name: 'Nintendo Switch',
+    details: 'Play at home or on the go with one system The Nintendo Switch™ system is designed to go wherever you do, instantly transforming from a home console you play on TV to a portable system you can play anywhere. So you get more time to play the games you love, however you like.',
+    description: 'Video game console',
+    category: 'Tech & Gadgets',
+    image: [p43,p43_2,p43_3,p43_4],
+    stock: 12,
+    new_price: 19999,
+    old_price: 250000,
+    featured: true,
+  },
+  {
+    id: 44,
+    name: 'Asus ROG Swift PG38UQ 38 inch 4K UHD 144HZ ',
+    details: 'ROG Swift PG38UQ 4K 144Hz gaming monitor ― 38-inch 4K UHD (3840 x 2160), 144Hz, 1ms, Fast IPS, G-Sync compatible, FreeSync Premium Pro, DisplayHDR™ 600, 98% DCI-P3, DisplayWidget Center, HDMI 2.1. 38-inch 4K UHD (3840 x 2160) gaming monitor with 144Hz refresh rate and Adaptive-Sync for super-smooth gaming visuals',
+    description: 'Monitor',
+    category: 'Tech & Gadgets',
+    image: [p44,p44_2,p44_3,],
+    stock: 1,
+    new_price: 44000,
+    old_price: 74999,
+    featured: false,
   },
   {
     id: 4,
@@ -165,8 +287,8 @@ export const products = [
     category: 'Tech & Gadgets',
     image: [p4,p4_2,p4_3],
     stock: 2,
-    new_price: 100,
-    old_price: 120,
+    new_price: 25000,
+    old_price: 25999,
     featured: false,
   },
   {
@@ -176,10 +298,10 @@ export const products = [
     description: 'Game Controller',
     category: 'Tech & Gadgets',
     image: [p5,p5_2,p5_3],
-    stock: 10,
-    new_price: 25,
-    old_price: 300,
-    featured: true,
+    stock: 0,
+    new_price: 999,
+    old_price: 2999,
+    featured: false,
   },
   {
     id: 6,
@@ -193,7 +315,54 @@ export const products = [
     old_price: 23000,
     featured: true  ,
   },
-
+  {
+    id: 31,
+    name: 'GAN 356 M 3x3 Magnetic Speed Cube',
+    details: 'Have you ever craved a GAN cube with latest mechanism but just a portion cost of flagship? Now you\'ve found it - GAN 356 M, with plastic core, new GES design, visible magnets, anti-scratch surface and a lot more features in mid-range price. It\'s the modern cube that really hits the spot!',
+    description: 'Speed cube',
+    category: 'Toys and Games',
+    image: [p31,p31_2,p31_3],
+    stock: 99,
+    new_price: 899,
+    old_price: 1199,
+    featured: false,
+  },
+  {
+    id: 34,
+    name: 'Crocodile Teeth Dentist Game',
+    details: 'Crocodile Teeth Dentist Game - ABS Crocodile Biting Finger Games, Hand Pulling Teeth Classic Toy, Family Tabletop Party Kids Toy, Portable Funny Gags Toy with Keychain for Kids & Adults. The finger biting toys designed by cartoon toys make the game very interesting. Toys come with key chains, which can be used as ornaments for key chains.',
+    description: 'Toy',
+    category: 'Toys and Games',
+    image: [p34,p34_2,p34_3,p34_4,],
+    stock: 0,
+    new_price: 99,
+    old_price: 120,
+    featured: false,
+  },
+  {
+    id: 10,
+    name: 'Fast and Furious Die-cast vehicle',
+    details: 'Jada Toys presents a new series of authentically detailed vehicles from the Fast & Furious franchise! This 1:24th scale vehicle measures approximately 8-inches long. Made of detailed die-cast metal with plastic construction, this amazing replica features opening doors and hood and real rolling wheels! Officially licensed, collect them all!',
+    description: 'Toy Car',
+    category: 'Toys and Games',
+    image: [p10,p10_2,p10_3],
+    stock: 7,
+    new_price: 100,
+    old_price: 120,
+    featured: false,
+  },
+  {
+    id: 37,
+    name: 'Quick Push Console with Instant Sound Feedback',
+    details: ' Our handheld game console, the Speed Push Pop, offers four fun game modes - stage mode, memory mode, scoring mode, and multiplayer mode. Each mode provides a unique way to play and enjoy the game, and the console\'s unique shape design makes it an excellent puzzle game and decompression tool for both children and adults.',
+    description: 'Toy',
+    category: 'Toys and Games',
+    image: [p37,p37_2,p37_3,],
+    stock: 0,
+    new_price: 200,
+    old_price: 170,
+    featured: false,
+  },
   {
     id: 7,
     name: 'BEE AND PUPPYCAT',
@@ -267,18 +436,6 @@ export const products = [
     featured: false,
   },
   {
-    id: 10,
-    name: 'Fast and Furious Die-cast vehicle',
-    details: 'Jada Toys presents a new series of authentically detailed vehicles from the Fast & Furious franchise! This 1:24th scale vehicle measures approximately 8-inches long. Made of detailed die-cast metal with plastic construction, this amazing replica features opening doors and hood and real rolling wheels! Officially licensed, collect them all!',
-    description: 'Toy Car',
-    category: 'Toys and Games',
-    image: [p10,p10_2,p10_3],
-    stock: 7,
-    new_price: 100,
-    old_price: 120,
-    featured: false,
-  },
-  {
     id: 8,
     name: 'WORLD OF HARRY POTTER',
     details: 'Relive the magic of seeing Hogwarts School of Witchcraft and Wizardry for the first time while putting together this Harry Potter puzzle. Full color puzzle shows Hogwarts castle at night. 550-piece puzzle measures 18" x 24" when fully assembled. A perfect gift for Harry Potter fans!',
@@ -290,6 +447,30 @@ export const products = [
     old_price: 90,
     featured: false,
   },
+  {
+    id: 35,
+    name: 'Hasbro Gaming Jenga Wooden Blocks Stacking',
+    details: 'BLOCK BALANCING GAME: Pull out a block, place it on top, but don\'t let the tower fall. This fun, challenging game is a great game for families and kids 6 and up. GAME FOR 1 OR MORE PLAYERS: No friends around. No problem. Play Jenga solo. Practice stacking skills, building the tower and trying not to let it come tumbling down',
+    description: 'Game',
+    category: 'Toys and Games',
+    image: [p35,p35_2,p35_3,],
+    stock: 0,
+    new_price: 200,
+    old_price: 279,
+    featured: false,
+  },
+  {
+    id: 36,
+    name: 'Dancing Cactus Talking Toy',
+    details: 'LED Color flashing light Cactus Toys: You can use it as a bedside lamp to accompany you to sleep. Knitted plush made, soft material, comfortable, safe. This product uses non-toxic and harmless plush fabric which is soft and comfortable for kids to play with confidence. Wipe off the dust with a damp cloth for cleanup',
+    description: 'Toy',
+    category: 'Toys and Games',
+    image: [p36,p36_2,p36_3,],
+    stock: 0,
+    new_price: 200,
+    old_price: 170,
+    featured: false,
+  },
 
   // artworks
   {
@@ -299,9 +480,9 @@ export const products = [
     description: 'Painting',
     category: 'Artworks',
     image: [p15,p15_2,p15_3],
-    stock: 4,
-    new_price: 190,
-    old_price: 220,
+    stock: 1,
+    new_price: 5190,
+    old_price: 8220,
     featured: false,
   },
   {
@@ -311,9 +492,9 @@ export const products = [
     description: 'Painting',
     category: 'Artworks',
     image: [p16,p16_2,p16_3],
-    stock: 4,
-    new_price: 190,
-    old_price: 220,
+    stock: 1,
+    new_price: 3190,
+    old_price: 12220,
     featured: false,
   },
   {
@@ -323,9 +504,9 @@ export const products = [
     description: 'Painting',
     category: 'Artworks',
     image: [p17,p17_2,p17_3],
-    stock: 4,
-    new_price: 190,
-    old_price: 220,
+    stock: 1,
+    new_price: 3190,
+    old_price: 4220,
     featured: false,
   },
   {
@@ -335,9 +516,9 @@ export const products = [
     description: 'Painting',
     category: 'Artworks',
     image: [p18,p18_2,p18_3],
-    stock: 4,
-    new_price: 190,
-    old_price: 220,
+    stock: 1,
+    new_price: 2190,
+    old_price: 3220,
     featured: false,
   },
   {
@@ -348,8 +529,8 @@ export const products = [
     category: 'Artworks',
     image: [p19,p19_2,p19_3],
     stock: 4,
-    new_price: 190,
-    old_price: 220,
+    new_price: 1090,
+    old_price: 11999,
     featured: false,
   },
   {
@@ -360,8 +541,8 @@ export const products = [
     category: 'Artworks',
     image: [p20,p20_2,p20_3],
     stock: 4,
-    new_price: 190,
-    old_price: 220,
+    new_price: 990,
+    old_price: 1500,
     featured: false,
   },
 
@@ -446,8 +627,8 @@ export const products = [
     category: 'Collectibles',
     image: [p27,p27_2,p27_3],
     stock: 20,
-    new_price: 80,
-    old_price: 110,
+    new_price: 180,
+    old_price: 210,
     featured: true,
   },
   {
@@ -459,7 +640,7 @@ export const products = [
     image: [p28,p28_2,p28_3],
     stock: 5,
     new_price: 270,
-    old_price: 240,
+    old_price: 340,
     featured: true,
   },
   {
@@ -483,7 +664,55 @@ export const products = [
     image: [p30,p30_2,p30_3],
     stock: 0,
     new_price: 200,
-    old_price: 170,
+    old_price: 370,
+    featured: false,
+  },
+  {
+    id: 32,
+    name: 'BUNINI COSTUME PLUSH (PINK)',
+    details: 'Experience unique identity now in your daily life. We\'ve lovingly recreated the adorable bunini featured in the "ASAP" music video as a charming plush. The costumes are detachable, allowing you to collect a variety of costumes & personalize your bunini to create a truly one-of-kind character.',
+    description: 'Mellolilly',
+    category: 'Collectibles',
+    image: [p32,p32_2,p32_3,p32_4],
+    stock: 99,
+    new_price: 1500,
+    old_price: 2000,
+    featured: false,
+  },
+  {
+    id: 33,
+    name: 'BUNINI COSTUME PLUSH (Yellow)',
+    details: 'Experience unique identity now in your daily life. We\'ve lovingly recreated the adorable bunini featured in the "ASAP" music video as a charming plush. The costumes are detachable, allowing you to collect a variety of costumes & personalize your bunini to create a truly one-of-kind character.',
+    description: 'Mingtz',
+    category: 'Collectibles',
+    image: [p33,p33_2,p33_3,p33_4],
+    stock: 99,
+    new_price: 1500,
+    old_price: 2000,
+    featured: false,
+  },
+  {
+    id: 38,
+    name: 'Pokemon Trading Card Game Pokemon Go',
+    details: 'A special set for the Pokémon TCG trading card game will focus on the popular mobile game Pokémon GO! Go hunting again and collect all the cards that you get only and only in the special products of this set (booster packs are not sold separately). Get into battle with this Elite Trainer Box!',
+    description: 'TCG',
+    category: 'Collectibles',
+    image: [p38,p38_2,p38_3,p38_4],
+    stock: 0,
+    new_price: 2999,
+    old_price: 3000,
+    featured: false,
+  },
+  {
+    id: 39,
+    name: 'POKEMON TRADING CARD GAME SS4 MINI PORTFOLIO',
+    details: 'About the size of a Pokémon TCG card, mini portfolios are a compact, convenient way to store and display up to 60 cards from your collection. This one features dynamic artwork of Gigantamax Pikachu and Gigantamax Orbeetle, and it comes with a Sword & Shield—Vivid Voltage booster pack to get you started!',
+    description: 'TCG',
+    category: 'Collectibles',
+    image: [p39,p39_2,p39_3,],
+    stock: 50,
+    new_price: 350,
+    old_price: 490,
     featured: false,
   },
 ];

@@ -4,7 +4,7 @@ import Item from '../components/product/Item';
 
 function Category({ banner, description, category }) {
   const { products } = useContext(ShopContext);
-
+  const categoryProducts = products.filter((item) => category === item.category);
   return (
     <>
       <div className="mx-1 md:mx-7 h-52 sm:mt-4 sm:mb-4 shadow-gray-800 shadow-sm rounded-sm overflow-hidden bg-cover bg-center" 
@@ -16,8 +16,8 @@ function Category({ banner, description, category }) {
           </div>
         </div>
       </div>
-      <p className="ps-8 pt-4">Showing 1 out of 12 products</p>
-      <div className="flex flex-wrap justify-center gap-x-4 gap-y-6 mx-auto my-6">
+      <p className="ps-4 sm:ps-10 pt-4">Showing {categoryProducts.length} of {categoryProducts.length} items</p>  
+      <div className="flex flex-wrap justify-center gap-x-4 gap-y-6 mx-auto my-2">
         {products.map((item) => {
           if (category === item.category) {
             return <Item key={item.id} {...item} />;

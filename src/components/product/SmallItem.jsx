@@ -7,7 +7,7 @@ function SmallItem({ ...product }) {
     <div className="flex flex-col w-full md:w-72 mx-6 md:mx-0  transform overflow-hidden bg-white dark:bg-slate-800 shadow-md hover:shadow-lg border border-gray-200 duration-300">
       <Link to={`/product/${encodeURIComponent(product.name.toLowerCase().replace(/\s+/g, '-'))}`}>
         <img
-          className="w-full h-44 rounded-t-md p-1 object-contain object-center"
+          className="w-full h-44 rounded-t-md py-2 object-contain object-center"
           src={product.image[0]}
           alt={product.name}
         />
