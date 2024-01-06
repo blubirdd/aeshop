@@ -14,14 +14,16 @@ function Item({ ...product }) {
           alt={product.name}
         />
       </Link>
-        <div className="p-4 flex-grow flex flex-col">
-          <h2 className="text-md font-bold dark:text-white text-gray-900">{product.name}</h2>
-          <h2 className="mb-2 text-sm font-normal dark:text-white text-gray-400">{product.description}</h2>
-          <div className="flex mt-auto items-center">
-            <p className="mr-2 text-xl font-semibold text-sky-900 dark:text-white">₱{product.new_price.toLocaleString()}</p>
-            <p className="text-sm font-medium text-sky-950 line-through dark:text-gray-300">₱{product.old_price.toLocaleString()}</p>
-          </div>
+      <div className="p-4 flex-grow flex flex-col">
+        <Link to={`/product/${encodeURIComponent(product.name.toLowerCase().replace(/\s+/g, '-'))}`}>
+          <h2 className="text-md font-bold dark:text-white text-gray-900 hover:text-sky-800">{product.name}</h2>
+        </Link>
+        <h2 className="mb-2 text-sm font-normal dark:text-white text-gray-400">{product.description}</h2>
+        <div className="flex mt-auto items-center">
+          <p className="mr-2 text-xl font-semibold text-sky-900 dark:text-white">₱{product.new_price.toLocaleString()}</p>
+          <p className="text-sm font-medium text-sky-950 line-through dark:text-gray-300">₱{product.old_price.toLocaleString()}</p>
         </div>
+      </div>
     </div>
   );
 }
