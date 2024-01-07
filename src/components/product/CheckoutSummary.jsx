@@ -5,7 +5,7 @@ function CheckoutSummary() {
   const { products, cartItems, getTotalOfCartProducts, getTotalCartAmount } = useContext(ShopContext);
 
   return (
-    <div className="w-full md:w-2/3 bg-white border px-4 py-4 md:px-6 md:py-4 mt-4 rounded-2xl">
+    <div className="w-full md:w-1/3 bg-white border px-4 py-4 md:mr-5 md:px-6 md:py-4 mt-4 rounded-xl">
       <h1 className="font-semibold text-lg md:text-xl border-b pb-2">Checkout Summary</h1>
       <div className="flex flex-col md:flex-row justify-between mt-4 md:mt-10 mb-4 md:mb-5">
         <span className="font-semibold text-sm uppercase mb-2 md:mb-0">{getTotalOfCartProducts()} Items</span>
