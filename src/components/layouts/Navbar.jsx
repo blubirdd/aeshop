@@ -95,8 +95,8 @@ function Navbar() {
             </div>
             {/* cart button */}
             {location.pathname !== '/cart' && (
-              <div className="cartButton">
-                <div className="hs-dropdown [--trigger:hover] z-50">
+              <div className="cartButton z-50">
+                <div className="hs-dropdown [--trigger:hover]">
                   <Link to="/cart">
                     <button
                       type="button"

@@ -1,26 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import regions from '../../constants/regions'
+import aeshop from '/aeshop.jpg'
 function CheckoutForm() {
   return (
-    <div className="w-full md:ml-12 md:mr-2 bg-white px-4 sm:px-8 py-4 mt-4 border">
-    <div className="bg-white p-4 sm:p-7 dark:bg-slate-900">
-      <nav className="flex" aria-label="Breadcrumb">
+    <div className="w-full md:ml-32 md:mr-5 bg-white  px-4 sm:px-8 py-4 mt-4 border rounded-2xl">
+      <img src={aeshop} className="w-40 mx-auto py-2 sm:p-4 sm:ml-2" />
+      <div className="dark:bg-slate-900">
+        <nav className="flex border-b pb-2 border-b-gray-200" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse md:pl-8">
-            <li className="inline-flex items-center" aria-current="page">
-              <Link to="/cart" className="group inline-flex items-center text-sm font-medium text-gray-700 hover:text-sky-600 dark:text-gray-400 dark:hover:text-white">
+            <li className="inline-flex items-center">
+              <Link to="/cart" className="group inline-flex items-center text-sm font-medium text-sky-700 hover:text-sky-600 dark:text-gray-400 dark:hover:text-white">
                 <svg className="w-4 h-4 me-1 group-hover:text-sky-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1" />
                 </svg>
                 Cart
               </Link>
             </li>
-            <li>
+            <li aria-current="page">
               <div className="flex items-center">
                 <svg className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
                 </svg>
-                <Link to="/checkout" className="ms-1 text-sm font-medium text-gray-700 hover:text-sky-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
+                <Link to="/checkout" className="ms-1 text-sm font-medium text-sky-700 hover:text-sky-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
                   Information
                 </Link>
               </div>
@@ -47,7 +49,7 @@ function CheckoutForm() {
             </li>
           </ol>
         </nav>
-        <div className="text-center mt-8 mb-4">
+        <div className="text-center mt-4 mb-4">
           <h2 className="text-2xl md:text-xl font-bold text-gray-800 dark:text-gray-200">
             Information
           </h2>
