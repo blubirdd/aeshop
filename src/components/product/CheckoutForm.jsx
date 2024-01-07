@@ -4,8 +4,10 @@ import regions from '../../constants/regions'
 import aeshop from '/aeshop.jpg'
 function CheckoutForm() {
   return (
-    <div className="w-full md:w-2/3 md:ml-10 md:mr-5 bg-white  px-4 sm:px-8 py-4 mt-4 border rounded-xl">
-      <img src={aeshop} className="w-40 mx-auto py-2 sm:p-4 sm:ml-2" />
+    <div className="w-full md:w-1/2 md:ml-32 md:mr-2 bg-white  px-4 sm:px-8 py-2 mt-4 border rounded-xl">
+      <Link to="/">
+        <img src={aeshop} className="w-40 mx-auto py-2 sm:p-4 sm:ml-2" />
+      </Link>
       <div className="dark:bg-slate-900">
         <nav className="flex border-b pb-2 border-b-gray-200" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse md:pl-8">
@@ -51,7 +53,7 @@ function CheckoutForm() {
         </nav>
         <div className="text-center mt-4 mb-4">
           <h2 className="text-2xl md:text-xl font-bold text-gray-800 dark:text-gray-200">
-            Information
+            Contact Information
           </h2>
           <p className="text-sm font-semibold text-gray-600 dark:text-gray-400">
             Have an account? <Link to="/guest/login" className="text-sky-500 hover:underline">Log in</Link>
@@ -69,7 +71,8 @@ function CheckoutForm() {
                   <input type="email" id="email"
                     className="block border w-full px-2.5 pb-2.5 pt-4  text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
-                    required />
+                    required
+                  />
                   <label
                     htmlFor="email"
                     className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
@@ -102,6 +105,7 @@ function CheckoutForm() {
                       id="firstName"
                       className="block border w-full px-2.5 pb-2.5 pt-4 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
+                      required
                     />
                     <label
                       htmlFor="firstName"
@@ -115,6 +119,7 @@ function CheckoutForm() {
                       id="lastName"
                       className="block border w-full px-2.5 pb-2.5 pt-4 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
+                      required
                     />
                     <label
                       htmlFor="lastName"
@@ -126,7 +131,8 @@ function CheckoutForm() {
                 <div className="relative">
                   <input type="text" id="address"
                     className="block border w-full px-2.5 pb-2.5 pt-4  text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " />
+                    placeholder=" "
+                    required />
                   <label
                     htmlFor="address"
                     className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
@@ -141,6 +147,7 @@ function CheckoutForm() {
                       id="postalCode"
                       className="block border w-full px-2.5 pb-2.5 pt-4 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
+                      required
                     />
                     <label
                       htmlFor="postalCode"
@@ -155,6 +162,7 @@ function CheckoutForm() {
                       id="city"
                       className="block border w-full px-2.5 pb-2.5 pt-4 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
+                      required
                     />
                     <label
                       htmlFor="city"
@@ -168,6 +176,7 @@ function CheckoutForm() {
                   <select
                     id="region"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
                   >
                     {regions.map((region) => (
                       <option key={region.value} value={region.value}>
@@ -184,8 +193,10 @@ function CheckoutForm() {
                 </div>
                 <div className="relative">
                   <input type="number" id="number"
-                    className="block border w-full px-2.5 pb-2.5 pt-4  text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " />
+                    className="block border w-full px-2.5 pb-2.5 pt-4  text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    placeholder=" "
+                    required
+                    />
                   <label
                     htmlFor="number"
                     className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
@@ -194,15 +205,13 @@ function CheckoutForm() {
                 </div>
               </div>
             </div>
+            <div className="mt-5 flex justify-end gap-x-2">
+              <button className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-sky-600 text-white hover:bg-sky-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                Continue to shipping
+              </button>
+            </div>
           </form>
-
-          <div className="mt-5 flex justify-end gap-x-2">
-            <button type="submit" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-sky-600 text-white hover:bg-sky-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-              Continue to shipping
-            </button>
-          </div>
         </div>
-
       </div>
     </div>
   )

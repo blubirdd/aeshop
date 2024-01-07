@@ -6,13 +6,13 @@ function CheckoutSummary() {
 
   return (
     <div className="w-full md:w-1/3 bg-white border px-4 py-4 md:mr-5 md:px-6 md:py-4 mt-4 rounded-xl">
-      <h1 className="font-semibold text-lg md:text-xl border-b pb-2">Checkout Summary</h1>
+      <h1 className="font-semibold text-lg md:text-xl border-b pb-2">Order Summary</h1>
       <div className="flex flex-col md:flex-row justify-between mt-4 md:mt-10 mb-4 md:mb-5">
         <span className="font-semibold text-sm uppercase mb-2 md:mb-0">{getTotalOfCartProducts()} Items</span>
         <span className="font-semibold text-sm md:text-md">Subtotal: ₱{getTotalCartAmount().toLocaleString()}</span>
       </div>
 
-      <div className="product-list md:overflow-auto md:h-[350px] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500">
+      <div className="product-list md:overflow-auto md:h-[350px] rounded-sm [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500">
         {products.map((product) => {
           if (cartItems[product.id] > 0) {
             return (
