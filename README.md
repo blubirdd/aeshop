@@ -1,8 +1,11 @@
-# React + Vite
+# Aeshop - Collectables and Gaming Store
+An e-commerce web app specializing in the sale of collectables, toys and gadgets. Browse through an extensive catalog of unique items, and add your favorites to the cart.
+## Access
+Access the [live demo](https://aeshop.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Responsive design
+- Full Cart Functionality
+- Search Products
+- Categorized Products
+- Product image gallery
